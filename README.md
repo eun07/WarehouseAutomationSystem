@@ -111,7 +111,8 @@ Stock Lambda send request using HTTP API Method to Legacy Factory System with st
 
 The one of the subscriber also got the out of stock messages from SNS. Lambda is triggered by SQS, execute SES to send email to advertisement team.
 
-**💡 Micro Service Architecture**
+**💡 Micro Service Architecture**<br>
+
 First, we need to handle amounts of traffic when orders are increasing. In addition, we don’t execute the code all-time. We just want to execute when the stock message is published. Therefore, we use AWS Lambda, which enables us handle amounts of traffic and can be executed on-demand method. 
 
 Second, we need message queue system that store message safely until consuming. Thus, we use AWS SQS, which enables to store messages safely and decouple dependency of each system. <br>
